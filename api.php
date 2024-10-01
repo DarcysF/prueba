@@ -8,7 +8,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "dbvirtualbiblioteca";
-$holamundo="hola mundo"
+
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
