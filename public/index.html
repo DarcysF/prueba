@@ -29,6 +29,12 @@
                 <button type="submit">Iniciar Sesión</button>
             </form>
         </div>
+        <?php
+        // Mostrar el mensaje de error si existe
+        if (isset($_GET['error']) && $_GET['error'] == 'true') {
+            echo '<p class="error">Contraseña incorrecta. Por favor, intenta de nuevo.</p>';
+        }
+        ?>
 
         <div class="overlay-container">
             <div class="overlay">

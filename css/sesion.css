@@ -170,12 +170,12 @@ input {
     left: -100%;
     height: 100%;
     width: 200%;
-      transform: translateX(0);
+    transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
-      transform: translateX(50%);
+    transform: translateX(50%);
 }
 
 .overlay-panel {
@@ -223,4 +223,8 @@ input {
     margin: 0 5px;
     height: 40px;
     width: 40px;
+}
+.error {
+    color: red;
+    font-weight: bold;
 }
