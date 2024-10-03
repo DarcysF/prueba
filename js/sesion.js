@@ -11,4 +11,22 @@ signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
 });
 
+/*validaciones js */
+function click() {
+    let nombre =document.getElementById('nombre').value;
+let correo =document.getElementById('correo').value;
+let telefono =document.getElementById('telefono').value;
+let contraseña =document.getElementById('nombre').value;
+/*funcion para validar */
+function validar_parametros() {
+    if (nombre==""  || correo==""   || telefono== ""    || contraseña==""  ) {
+        
+        alert("debes ingresar todos los campos");
+        
+    }
+    
+}
+    
+}
+
 
