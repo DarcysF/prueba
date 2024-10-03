@@ -19,14 +19,14 @@ let telefono =document.getElementById('telefono').value;
 let contraseña =document.getElementById('nombre').value;
 /*funcion para validar */
 function validar_parametros() {
-    if (nombre==""  || correo==""   || telefono== ""    || contraseña==""  ) {
-        
+    if (nombre==null  || correo==null   || telefono== null    || contraseña==null  ) {
+
         alert("debes ingresar todos los campos");
-        
+
     }
-    
+
 }
-    
+
 }
 
 
