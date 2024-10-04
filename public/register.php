@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>ERROR AL INGRESAR LOS DATOS</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
@@ -16,7 +16,7 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
    body{
-    
+
    }
 .container{
     display:flex;
@@ -26,7 +26,7 @@
     width: 100%;
     height:80px;
 
-    
+
 }
 .container__nav{
     padding:0% 5% 0% 5%;
@@ -37,14 +37,14 @@
 .container__nav ul,
 .container__nav a
 {
-   
+
    list-style: none;
    text-decoration:none;
 
  font-family: 'Montserrat', sans-serif;
 
  color:var(    --card-background);
-  font-size:1.5rem;  
+  font-size:1.5rem;
    width: 100%;
    font-weight:bold;
 
@@ -59,34 +59,34 @@
     width: 100%;
     height:100%;
 
-  
+
 }
 .respuesta p{
     font-family: 'Montserrat', sans-serif;
     font-weight:bold;
 
-  font-size:1.5rem;  
+  font-size:1.5rem;
 
 }
 .img{
     justify-content : center;
     align-items:center;
- 
-  
+
+
     width: 50%;
     height:450px;
 }
 .img img{
 
-   
+
       flex-shrink: 1;
       width: 100%;
       height:100%;
 
-  
+
     justify-content : center;
     align-items:center;
-   
+
 }
 
 
@@ -95,24 +95,7 @@
     </style>
 </head>
 <body>
-<header class="container">
-    <nav class="container__nav">
-        
-        <ul>
-            <li>
-                <div class="tarjeta">
-                <a href="/darcy/prueba/public/">VOLVER AL INICIO </a>
 
-                </div>
-           
-             </li>
-            
-        </ul>
-
-        
-        
-    </nav>
-</header>
 
 
 <?php
@@ -122,22 +105,22 @@ $result=null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // var_dump($_POST);
-    $result1 = (!isset($_POST['name']) || !isset($_POST['mail']) || !isset($_POST['telephone']) || !isset($_POST['password']));
-    if ($result1==$result) {
+    $result= (!isset($_POST['name']) || !isset($_POST['mail']) || !isset($_POST['telephone']) || !isset($_POST['password']));
+    if  (!isset($_POST['name']) || !isset($_POST['mail']) || !isset($_POST['telephone']) || !isset($_POST['password'])) {
         echo '<div id="responseMessage" class="respuesta" >
-        
+
         <p style="color: red;">Todos los campos son obligatorios, vuelve al inicio</p>
         <div class="img">
          <img  src="/darcy/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
-    
-        </div>
-       
 
-        
+        </div>
+
+
+
         </div>' ;
-      
+
         exit;
-       
+
 
     }
     }else {
@@ -146,8 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = new User();
     $result = $user->register($_POST['name'], $_POST['mail'],$_POST['telephone'], $_POST['password']);
-    //echo json_encode($result);
- 
+
 
 
 ?>
@@ -159,16 +141,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Recoger los datos del formulario
         const formData = new FormData(this);
-        
+
         // Enviar los datos con Fetch API
         const response = await fetch('register.php', {
             method: 'POST',
             body: formData
         });
-        
+
         // Leer la respuesta como texto HTML
         const result = await response.text();
-        
+
 
         // Insertar el HTML devuelto en el div con id 'responseMessage'
         document.getElementById('responseMessage').innerHTML = result;
@@ -180,9 +162,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // var_dump($_POST);
     if (!isset($_POST['name']) || !isset($_POST['mail']) || !isset($_POST['telephone']) || !isset($_POST['password'])) {
         echo json_encode(['error' => 'Todos los campos son obligatorios']);
-      
+
         exit;
-       
+
 
     }
 
@@ -193,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(['error' => 'Método no permitido']);
 } */
 </script>
-        
+
 </body>
 </html>
 
