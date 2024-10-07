@@ -27,16 +27,16 @@
                     echo ('<div id="responseMessage" class="respuesta" >
                 <p style="color: red;">Todos los campos son obligatorios, redirigiendo al inicio</p>
                 <div class="img">
-                 <img  src="/darcy/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+                 <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
                 </div>
                 </div>
                     <script>
-                        // Usando setTimeout para ejecutar una función después de 5 segundos.
-                        setTimeout(function() {
-                            // Redirigir con JavaScript
-                            window.location.href = "/darcy/prueba/public/index.html";
-                        }, 4000);
-                    </script>
+        // Usando setTimeout para ejecutar una función después de 5 segundos.
+        setTimeout(function() {
+            // Redirigir con JavaScript
+            window.location.href = "/darcy/prueba/public/index.html";
+        }, 4000);
+    </script>
                 ');
                 } else {
                     // Insertar el usuario en la base de datos
@@ -53,19 +53,19 @@
                         ':id_state_user' => $state
                     ]);
                     echo (
-                                '<div id="responseMessage" class="respuesta" >
-                        <p style="color: red;">Bienvenido a nuestra biblioteca virtual </p>
-                        <div class="img">
-                        <img  src="/darcy/prueba/img/exito.gif" alt="icono de exito" srcset="">
-                        </div>
-                        </div>
-                        <script>
-                            // Usando setTimeout para ejecutar una función después de 5 segundos.
-                            setTimeout(function() {
-                                // Redirigir con JavaScript
-                                window.location.href = "/darcy/prueba/public/home.html";
-                            }, 5000);
-                        </script>
+                        '<div id="responseMessage" class="respuesta" >
+                <p style="color: red;">Bienvenido a nuestra biblioteca virtual </p>
+                <div class="img">
+                 <img  src="/darcy/prueba/img/exito.gif" alt="icono de exito" srcset="">
+                </div>
+                </div>
+                <script>
+        // Usando setTimeout para ejecutar una función después de 5 segundos.
+        setTimeout(function() {
+            // Redirigir con JavaScript
+            window.location.href = "/darcy/prueba/public/home.html";
+        }, 5000);
+    </script>
                 '
                            );
                  /*funcion para validar datos  */

@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p style="color: red;">Todos los campos son obligatorios, vuelve al inicio</p>
         <div class="img">
-         <img  src="/darcy/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+         <img  src="prueba/img/sin-datos.gif" alt="icono de error" srcset="">
 
         </div>
 
