@@ -16,7 +16,7 @@ function click() {
     let nombre =document.getElementById('nombre').value;
 let correo =document.getElementById('correo').value;
 let telefono =document.getElementById('telefono').value;
-let contraseña =document.getElementById('nombre').value;
+let contraseña =document.getElementById('contraseña').value;
 /*funcion para validar */
 function validar_parametros() {
     if (nombre==null  || correo==null   || telefono== null    || contraseña==null  ) {
@@ -24,28 +24,42 @@ function validar_parametros() {
         alert("debes ingresar todos los campos");
 
     }
+    else if(contraseña<8    || contraseña>10){
+        alert("la cantidad de caracteres de estar entre 8 y 10 caracteres");
+        console.log(contraseña)
+        contraseña.value=contraseña;  
+        validarContraseña(contraseña);
+        limpiar();
+    }
+ 
+   
+
 
 }
 
 }
 /*modal */
 
-    let openmodal=document.getElementById('registrarse');
-    const modal=document.querySelector('.modal');
-    const closemodal=document.querySelector('.modal__close');
+function validarContraseña(contraseña) {
+    const tieneMayuscula = /[A-Z]/.test(contraseña);
+    const tieneMinuscula = /[a-z]/.test(contraseña);
+    const tieneNumero = /[0-9]/.test(contraseña);
+    const tieneCaracterEspecial = /[!@#$%^&*()_+\-=[\]{}|;:,.<>?/`~]/.test(contraseña);
 
-    openmodal.addEventListener('click',(e)=>{
-      e.preventDefault();
-   modal.classList.add('modal--show');
+    if (tieneMayuscula && tieneMinuscula && tieneNumero && tieneCaracterEspecial) {
+        alert("Contraseña fuerte");
+    } else {
+        alert("Contraseña débil: Debe incluir al menos una mayúscula, una minúscula, un número y un carácter especial");
+    }
+}
+function limpiar(){
 
+    let nombre =document.getElementById('nombre').value=" ";
+    let correo =document.getElementById('correo').value=" ";
+    let telefono =document.getElementById('telefono').value=" ";
+  let contraseña =document.getElementById('contraseña').value=" ";
 
-    });
-    closemodal.addEventListener('click',(e)=>{
-      e.preventDefault();
-   modal.classList.remove('modal--show');
-
-
-    });
-
+}
+    
 
 
