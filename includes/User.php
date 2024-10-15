@@ -89,7 +89,7 @@
                     ];
                 }
                 // Buscar al usuario por su correo
-                $stmt = $this->db->getPDO()->prepare("SELECT * FROM Users WHERE mail_user = :mail_user");
+                $stmt = $this->db->getPDO()->prepare("SELECT * FROM users WHERE mail_user = :mail_user");
                 $stmt->execute([':mail_user' => $email]);
                 // Verificar si se encontró un usuario
                 if ($stmt->rowCount() > 0) {
