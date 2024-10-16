@@ -129,6 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = new User();
     $result = $user->register($_POST['name'], $_POST['mail'],$_POST['telephone'], $_POST['password']);
+    echo json_encode($result);
 
 
 

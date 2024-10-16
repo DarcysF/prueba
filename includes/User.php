@@ -19,7 +19,8 @@
         }
         // Registro de usuario
         public function register($name, $email, $telephone, $password, $rol = 2, $state = 2)
-        {
+        {     $num_rows=null;
+
             try {
                 // Validación básica
                 if (empty($name) || empty($email) || empty($telephone) || empty($password)) {
@@ -33,7 +34,7 @@
         // Usando setTimeout para ejecutar una función después de 5 segundos.
         setTimeout(function() {
             // Redirigir con JavaScript
-            window.location.href = "/prueba/public/index.html";
+            window.location.href = "/darcy/prueba/public/index.html";
         }, 4000);
     </script>
                 ');
@@ -55,18 +56,34 @@
                         '<div id="responseMessage" class="respuesta" >
                 <p style="color: red;">Bienvenido a nuestra biblioteca virtual </p>
                 <div class="img">
-                 <img  src="prueba/img/exito.gif" alt="icono de exito" srcset="">
+                 <img  src="/darcy/prueba/img/exito.gif" alt="icono de exito" srcset="">
                 </div>
                 </div>
                 <script>
         // Usando setTimeout para ejecutar una función después de 5 segundos.
         setTimeout(function() {
             // Redirigir con JavaScript
-            window.location.href = "/prueba/public/home.html";
+            window.location.href = "/darcy/prueba/public/home.html";
         }, 5000);
     </script>
                 '
-                    );
+                           );
+                 /*funcion para validar datos  */
+                  $consulta_validar_datos="SELECT * FROM users WHERE name_user='$name' and mail_user='$email'
+                   and telephone_user = '$telephone'
+                   and password_user = '$password'
+                   and id_rol_user= '$rol'
+                   and id_state_user = '$state'";
+                  $validando= $this->db->getPDO()->prepare($consulta_validar_datos);
+                  if ($validando->$num_rows>0) {
+
+                    echo ("  <h1>el usuario ya existe </h1>");
+                  }
+                  else{
+                    echo ("  <h1>BIEN </h1>");
+
+                  }
+    
                 }
             } catch (PDOException $e) {
                 error_log('Error en el registro de usuario: ' . $e->getMessage());
@@ -125,6 +142,7 @@
         }
     }
     ?>
+  
 </body>
 
 </html>
