@@ -1,5 +1,5 @@
 // Configuración de la URL base de la API
-const API_BASE_URL = 'http://localhost/biblioteca_virtual/api.php';
+const API_BASE_URL = 'http://localhost/prueba/includes/api.php';
 
 // Variables globales
 let favorites = [];
