@@ -37,7 +37,7 @@
 
                 <!-- Alerta de error -->
                 <?php 
-                if (isset($_GET['message']) && $_GET['message'] == 'error') {
+                if (isset($_GET['messages']) && $_GET['messages'] == 'error') {
                 ?>
                 <div class="alert alert-danger mt-3" role="alert">
                     La contraseña o el correo electrónico son incorrectos.

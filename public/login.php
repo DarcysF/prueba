@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit(); // Asegúrate de detener la ejecución después de redirigir
     } else {
         // Si el inicio de sesión falla, redirigir con mensaje de error
-        header('Location: index.php?message=error'); // Cambia a la página correcta
+        header('Location: index.php?messages=error'); // Cambia a la página correcta
         exit();
     }
 } else {
     // Si no es un método POST, retornamos un error
-    header('Location: index.php?message=error'); // Cambia a la página correcta
+    header('Location: index.php?messages=error'); // Cambia a la página correcta
     exit();
 }
