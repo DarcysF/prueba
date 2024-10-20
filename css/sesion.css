@@ -84,8 +84,13 @@ input {
     background-color: #eee;
     border: none;
     padding: 12px 15px;
-    margin: 8px 0;
+    margin: 12px 0; /* Aumenta el margen para separar más los campos */
     width: 100%;
+}
+
+/* Nuevo estilo para los inputs en la sección de inicio de sesión */
+.sign-in-container input {
+    margin-bottom: 20px; /* Espacio adicional entre campos de entrada */
 }
 
 .container {
