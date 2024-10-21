@@ -60,7 +60,7 @@
                         echo 'Inicia sesión con tu nueva contraseña';
                         break;
                     default:
-                        echo 'Algo salió mal, intenta de nuevo';
+                        echo 'Tu correo electronico no esta registrado';
                         break;
                     }
                     ?>

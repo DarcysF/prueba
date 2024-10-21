@@ -48,7 +48,7 @@ class Password {
                 // Contenido
                 $mailPHPMailer->isHTML(true);
                 $mailPHPMailer->Subject = 'Restablecercontraseña';
-                $mailPHPMailer->Subject = 'Recuperación de contraseña';
+                $mailPHPMailer->Subject = 'password recovery Biblioteca Virtual';
                 $mailPHPMailer->Body    = 'Hola, este es un correo generado para solicitar tu recuperación de contraseña, por favor, visita la página de <a href="localhost/prueba/public/change.php?id_user='.$result['id_user'].'">Recuperación de contraseña</a>';
             
                 $mailPHPMailer->send();
