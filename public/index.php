@@ -25,6 +25,7 @@
                 <button onclick="click()" type="submit">Registrarse</button>
             </form>
         </div>
+        <!-- comenatrio -->
         <!-- Formulario de Inicio de Sesión -->
         <div class="form-container sign-in-container">
             <form action="login.php" method="POST">
