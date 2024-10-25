@@ -107,21 +107,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // var_dump($_POST);
     $result= (!isset($_POST['name']) || !isset($_POST['mail']) || !isset($_POST['telephone']) || !isset($_POST['password']));
     if  (!isset($_POST['name']) || !isset($_POST['mail']) || !isset($_POST['telephone']) || !isset($_POST['password'])) {
-        echo '<div id="responseMessage" class="respuesta" >
-
-        <p style="color: red;">Todos los campos son obligatorios, vuelve al inicio</p>
+        echo '
+        <div id="responseMessage" class="respuesta" >
+            <p style="color: red;">Todos los campos son obligatorios, vuelve al inicio</p>
         <div class="img">
 
-         <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+             <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
 
-        <img  src="prueba/img/sin-datos.gif" alt="icono de error" srcset="">
-
-
+             <img  src="prueba/img/sin-datos.gif" alt="icono de error" srcset="">
         </div>
-
-
-
-        </div>' ;
+        </div>
+        ';
 
         exit;
 
