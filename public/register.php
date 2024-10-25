@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p style="color: red;">Todos los campos son obligatorios, vuelve al inicio</p>
         <div class="img">
-         <img  src="prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+         <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
 
         </div>
 
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = new User();
     $result = $user->register($_POST['name'], $_POST['mail'],$_POST['telephone'], $_POST['password']);
-    echo json_encode($result);
+ echo json_encode($result);
 
 
 

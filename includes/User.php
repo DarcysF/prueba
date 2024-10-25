@@ -27,7 +27,9 @@
                     echo ('<div id="responseMessage" class="respuesta" >
                 <p style="color: red;">Todos los campos son obligatorios, redirigiendo al inicio</p>
                 <div class="img">
-                 <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+                  <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+                  
+          
                 </div>
                 </div>
                     <script>
@@ -68,7 +70,7 @@
     </script>
                 '
                            );
-                 /*funcion para validar datos  */
+                 /*funcion para validar datos  
                   $consulta_validar_datos="SELECT * FROM users WHERE name_user='$name' and mail_user='$email'
                    and telephone_user = '$telephone'
                    and password_user = '$password'
@@ -77,12 +79,12 @@
                   $validando= $this->db->getPDO()->prepare($consulta_validar_datos);
                   if ($validando->$num_rows>0) {
 
-                    echo ("  <h1>el usuario ya existe </h1>");
+                    echo "  <h1>el usuario ya existe </h1>";
                   }
                   else{
                     echo ("  <h1>BIEN </h1>");
 
-                  }
+                  }*/
     
                 }
             } catch (PDOException $e) {
