@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
 </head>
 
 <body>
@@ -19,26 +19,35 @@
         }
         // Registro de usuario
         public function register($name, $email, $telephone, $password, $rol = 2, $state = 2)
-        {     $num_rows=null;
+        {
+            $num_rows = null;
 
             try {
                 // Validación básica
                 if (empty($name) || empty($email) || empty($telephone) || empty($password)) {
-                    echo ('<div id="responseMessage" class="respuesta" >
-                <p style="color: red;">Todos los campos son obligatorios, redirigiendo al inicio</p>
-                <div class="img">
-                  <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+                    echo ('
+                                            
+                        <head>
+                          <title>Error al registrase</title>
+                        </head>
+
+                   
+
+                            <div id="responseMessage" class="respuesta" >
+                                <p style="color: red;">Todos los campos son obligatorios, redirigiendo al inicio</p>
+                              <div class="img">
+                                <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
                   
           
-                </div>
-                </div>
+                              </div>
+                            </div>
                     <script>
-        // Usando setTimeout para ejecutar una función después de 5 segundos.
-        setTimeout(function() {
-            // Redirigir con JavaScript
-            window.location.href = "/darcy/prueba/public/index.php";
-        }, 4000);
-    </script>
+                        // Usando setTimeout para ejecutar una función después de 5 segundos.
+                            setTimeout(function() {
+                                // Redirigir con JavaScript
+                                window.location.href = "/darcy/prueba/public/index.php";
+                            }, 4000);
+                    </script>
                 ');
                 } else {
                     // Insertar el usuario en la base de datos
@@ -55,37 +64,44 @@
                         ':id_state_user' => $state
                     ]);
                     echo (
-                        '<div id="responseMessage" class="respuesta" >
-                <p style="color: red;">Bienvenido a nuestra biblioteca virtual </p>
-                <div class="img">
-                 <img  src="/darcy/prueba/img/exito.gif" alt="icono de exito" srcset="">
-                </div>
-                </div>
-                <script>
-        // Usando setTimeout para ejecutar una función después de 5 segundos.
-        setTimeout(function() {
-            // Redirigir con JavaScript
-            window.location.href = "/darcy/prueba/public/home.php";
-        }, 5000);
-    </script>
+
+                        '
+                        <head>
+                            <title>Bienvenido</title>
+                            <link rel="shortcut icon" href="./darcy/prueba/img/icono__bienvenida.png" type="image/x-icon">
+
+                          
+                        </head>
+                            <div id="responseMessage" class="respuesta" >
+                                    <p style="color: red;">Bienvenido a nuestra biblioteca virtual </p>
+                                <div class="img">
+                                    <img  src="/darcy/prueba/img/exito.gif" alt="icono de exito" srcset="">
+                                </div>
+                            </div>
+                        <script>
+                            // Usando setTimeout para ejecutar una función después de 5 segundos.
+                            setTimeout(function() {
+                                // Redirigir con JavaScript
+                                window.location.href = "/darcy/prueba/public/home.php";
+                            }, 5000);
+                         </script>
                 '
-                           );
-                 /*funcion para validar datos  
-                  $consulta_validar_datos="SELECT * FROM users WHERE name_user='$name' and mail_user='$email'
-                   and telephone_user = '$telephone'
-                   and password_user = '$password'
-                   and id_rol_user= '$rol'
-                   and id_state_user = '$state'";
-                  $validando= $this->db->getPDO()->prepare($consulta_validar_datos);
-                  if ($validando->$num_rows>0) {
+                    );
+                    /*funcion para validar datos  
+                     $consulta_validar_datos="SELECT * FROM users WHERE name_user='$name' and mail_user='$email'
+                      and telephone_user = '$telephone'
+                      and password_user = '$password'
+                      and id_rol_user= '$rol'
+                      and id_state_user = '$state'";
+                     $validando= $this->db->getPDO()->prepare($consulta_validar_datos);
+                     if ($validando->$num_rows>0) {
 
-                    echo "  <h1>el usuario ya existe </h1>";
-                  }
-                  else{
-                    echo ("  <h1>BIEN </h1>");
+                       echo "  <h1>el usuario ya existe </h1>";
+                     }
+                     else{
+                       echo ("  <h1>BIEN </h1>");
 
-                  }*/
-    
+                     }*/
                 }
             } catch (PDOException $e) {
                 error_log('Error en el registro de usuario: ' . $e->getMessage());

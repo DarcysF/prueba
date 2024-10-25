@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ERROR AL INGRESAR LOS DATOS</title>
+ 
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         :root {
