@@ -1,12 +1,10 @@
-
 <?php
 require_once __DIR__ . '/../includes/User.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificamos si se enviaron los campos de correo y contraseña
     if (empty($_POST['mail']) || empty($_POST['password'])) {
-        header('Content-Type: application/json'); // Cabecera para JSON
-        echo json_encode(['error' => 'Todos los campos son obligatorios']);
+        header('Location: index.php?message=error'); // Redirigir a la página con mensaje de error
         exit;
     }
 
@@ -20,16 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificamos si 'success' existe y si es true
     if (isset($result['success']) && $result['success']) {
         // Redirigir a la página 'home.php' si el inicio de sesión es correcto
-        header("Location: home.html");
+        header("Location: home.php");
         exit(); // Asegúrate de detener la ejecución después de redirigir
     } else {
-        // Si el inicio de sesión falla, devolver el error en formato JSON
-        header('Content-Type: application/json'); // Cabecera para JSON
-        echo json_encode($result);
+        // Si el inicio de sesión falla, redirigir con mensaje de error
+        header('Location: index.php?messages=error'); // Cambia a la página correcta
+        exit();
     }
 } else {
     // Si no es un método POST, retornamos un error
-    header('Content-Type: application/json'); // Cabecera para JSON
-    echo json_encode(['error' => 'Método no permitido']);
+    header('Location: index.php?messages=error'); // Cambia a la página correcta
+    exit();
 }
-

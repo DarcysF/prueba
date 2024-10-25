@@ -43,10 +43,10 @@
 
  font-family: 'Montserrat', sans-serif;
 
- color:var(    --card-background);
-  font-size:1.5rem;
-   width: 100%;
-   font-weight:bold;
+    color:var(    --card-background);
+    font-size:1.5rem;
+    width: 100%;
+    font-weight:bold;
 
 }
 .respuesta{
@@ -111,7 +111,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <p style="color: red;">Todos los campos son obligatorios, vuelve al inicio</p>
         <div class="img">
+<<<<<<< HEAD
          <img  src="/prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+=======
+        <img  src="prueba/img/sin-datos.gif" alt="icono de error" srcset="">
+>>>>>>> 6b7d78a4b31599caa3eeebf1dd44f8de49553bd5
 
         </div>
 
