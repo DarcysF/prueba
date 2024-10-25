@@ -36,7 +36,7 @@
         // Usando setTimeout para ejecutar una función después de 5 segundos.
         setTimeout(function() {
             // Redirigir con JavaScript
-            window.location.href = "/darcy/prueba/public/index.html";
+            window.location.href = "/darcy/prueba/public/index.php";
         }, 4000);
     </script>
                 ');
@@ -65,7 +65,7 @@
         // Usando setTimeout para ejecutar una función después de 5 segundos.
         setTimeout(function() {
             // Redirigir con JavaScript
-            window.location.href = "/darcy/prueba/public/home.html";
+            window.location.href = "/darcy/prueba/public/home.php";
         }, 5000);
     </script>
                 '

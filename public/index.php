@@ -15,8 +15,7 @@
                 <h1>Crear Cuenta</h1>
                 <input id="nombre" type="text" name="name" placeholder="Nombre" required />
                 <br>
-                <input id="correo" type="email" name="mail" placeholder="Correo electrónico" required />
-                <br>
+               
                 <input id="correo" type="email" name="mail" placeholder="Correo electrónico" required />
                 <br>
                 <input id="telefono" type="tel" name="telephone" placeholder="telephone" required />
