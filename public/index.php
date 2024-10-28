@@ -18,9 +18,9 @@
                
                 <input id="correo" type="email" name="mail" placeholder="Correo electrónico" required />
                 <br>
-                <input id="telefono" type="tel" name="telephone" placeholder="telephone" required />
+                <input id="telefono" type="tel" name="telephone" placeholder="telephone" minlength="10" maxlength="10" required />
                 <br>
-                <input id="contraseña" type="password" name="password" placeholder="Contraseña" required  />
+                <input id="contraseña" type="password" name="password" placeholder="Contraseña"  minlength="8" maxlength="10" required  />
                 <button onclick="click()" type="submit">Registrarse</button>
             </form>
         </div>

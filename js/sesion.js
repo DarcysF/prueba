@@ -17,11 +17,11 @@ signInButton.addEventListener('click', () => {
 
 
 
-        function click() {
-    let nombre =document.getElementById('nombre').value;
-let correo =document.getElementById('correo').value;
-let telefono =document.getElementById('telefono').value;
-let contraseña =document.getElementById('contraseña').value;
+function click() {
+let nombre =document.getElementById('#nombre').value;
+let correo =document.getElementById('#correo').value;
+let telefono =document.getElementById('#telefono').value;
+let contraseña =document.getElementById('#contraseña').value;
 /*funcion para validar */
 function validar_parametros() {
     if (nombre==null  || correo==null   || telefono== null    || contraseña==null  ) {
@@ -60,9 +60,9 @@ function validarContraseña(contraseña) {
 }
 function limpiar(){
 
-    let nombre =document.getElementById('nombre').value=" ";
-    let correo =document.getElementById('correo').value=" ";
-    let telefono =document.getElementById('telefono').value=" ";
-  let contraseña =document.getElementById('contraseña').value=" ";
+    let nombre =document.getElementById('#nombre').value=" ";
+    let correo =document.getElementById('#correo').value=" ";
+    let telefono =document.getElementById('#telefono').value=" ";
+  let contraseña =document.getElementById('#contraseña').value=" ";
 
 }
