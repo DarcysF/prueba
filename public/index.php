@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro e Inicio de Sesión</title>
     <link rel="stylesheet" href="../css/sesion.css">
-    
+    <script src="../js/sesion.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
     .cajas {
@@ -26,27 +26,21 @@
                 <h1>Crear Cuenta</h1>
                 <div class="tooltip-container">
                 <input class="cajas" id="nombre" type="text" name="name" placeholder="Nombre" required />
-                
-
-
                 </div>
                 <div class="tooltip-container">
                 <input class="cajas" id="correo" type="email" name="mail" placeholder="Correo electrónico" required />
-               
-               
                 </div>
                 <div class="tooltip-container">
                 <input  class="cajas" id="telefono" type="tel" name="telephone" placeholder="telephone" minlength="10" maxlength="10"  required />
                 <br>
                 <span class="tooltip-text">el telefono debe tener 10 caracteres.</span>
-
                 </div>
                 <div class="tooltip-container">
                      <input class="cajas"  id="contraseña"  type="password"  name="password"  placeholder="Contraseña"  minlength="8" maxlength="10"  required />
                     <br>
                      <span class="tooltip-text"> La contraseña debe tener entre 8 y 10 caracteres.</span>
-                </div>                
-               <button onclick="click()" type="submit">Registrarse</button>
+                </div>
+               <button id="submitBtn" onclick="click()" type="submit" disabled >Registrarse hola munod</button>
             </form>
         </div>
         <!-- comenatrio -->
@@ -112,8 +106,71 @@
         </div>
     </div>
     
-    <script src="../js/sesion.js"></script>
+ 
+<script>
+    function validar_campos() {
+    let nombre = document.getElementById('nombre').value;
+    let correo = document.getElementById('correo').value;
+    let telefono = document.getElementById('telefono').value;
+    let contraseña = document.getElementById('contraseña').value;
+    let submitBtn = document.getElementById('submitBtn');
+    
+    // Validación de campos vacíos
+    if (!nombre || !correo || !telefono || !contraseña) {
+        alert("Debes ingresar todos los campos");
+        limpiar();
+        submitBtn.disabled = true;  // Deshabilitar botón
+        return false;
+    }
+    
+    // Validar fuerza de la contraseña
+    const esContrasenaFuerte = validarContraseña(contraseña);
+    
+    if (!esContrasenaFuerte) {
+        submitBtn.disabled = true;  // Deshabilitar botón
+        return false;
+    }
+    
+    submitBtn.disabled = false;  // Habilitar botón si todo es válido
+    return true;
+}
 
+// Función de validación que se ejecuta al enviar el formulario
+function validar_parametros() {
+    return validar_campos();
+}
+
+// Evento de click que llama a la función de validación
+function click() {
+    validar_parametros();
+    console.log("Validación realizada");
+}
+
+// Validación de la fuerza de la contraseña
+function validarContraseña(contraseña) {
+    const tieneMayuscula = /[A-Z]/.test(contraseña);
+    const tieneMinuscula = /[a-z]/.test(contraseña);
+    const tieneNumero = /[0-9]/.test(contraseña);
+    const tieneCaracterEspecial = /[!@#$%^&*()_+\-=[\]{}|;:,.<>?/`~]/.test(contraseña);
+
+    if (tieneMayuscula && tieneMinuscula && tieneNumero && tieneCaracterEspecial) {
+        alert("Contraseña fuerte");
+        return true;
+    } else {
+        alert("Contraseña débil: Debe incluir al menos una mayúscula, una minúscula, un número y un carácter especial");
+        return false;
+    }
+}
+
+// Función para limpiar los campos
+function limpiar() {
+    document.getElementById('nombre').value = "";
+    document.getElementById('correo').value = "";
+    document.getElementById('telefono').value = "";
+    document.getElementById('contraseña').value = "";
+    document.getElementById('submitBtn').disabled = true;  // Deshabilitar el botón después de limpiar
+}
+</script>
 
     
 </body>
