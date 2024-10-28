@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro e Inicio de Sesión</title>
     <link rel="stylesheet" href="../css/sesion.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+    .cajas {
+    width:500px;
+    margin: 0% 0% 1% 0% ;
+
+  
+}
+ 
+</style>
+
 </head>
 <body>
     <div class="container" id="container">
@@ -13,15 +24,29 @@
         <div class="form-container sign-up-container">
             <form action="register.php" method="POST">
                 <h1>Crear Cuenta</h1>
-                <input id="nombre" type="text" name="name" placeholder="Nombre" required />
-                <br>
+                <div class="tooltip-container">
+                <input class="cajas" id="nombre" type="text" name="name" placeholder="Nombre" required />
+                
+
+
+                </div>
+                <div class="tooltip-container">
+                <input class="cajas" id="correo" type="email" name="mail" placeholder="Correo electrónico" required />
                
-                <input id="correo" type="email" name="mail" placeholder="Correo electrónico" required />
+               
+                </div>
+                <div class="tooltip-container">
+                <input  class="cajas" id="telefono" type="tel" name="telephone" placeholder="telephone" minlength="10" maxlength="10"  required />
                 <br>
-                <input id="telefono" type="tel" name="telephone" placeholder="telephone" minlength="10" maxlength="10" required />
-                <br>
-                <input id="contraseña" type="password" name="password" placeholder="Contraseña"  minlength="8" maxlength="10" required  />
-                <button onclick="click()" type="submit">Registrarse</button>
+                <span class="tooltip-text">el telefono debe tener 10 caracteres.</span>
+
+                </div>
+                <div class="tooltip-container">
+                     <input class="cajas"  id="contraseña"  type="password"  name="password"  placeholder="Contraseña"  minlength="8" maxlength="10"  required />
+                    <br>
+                     <span class="tooltip-text"> La contraseña debe tener entre 8 y 10 caracteres.</span>
+                </div>                
+               <button onclick="click()" type="submit">Registrarse</button>
             </form>
         </div>
         <!-- comenatrio -->

@@ -36,6 +36,7 @@ span {
     font-size: 12px;
 }
 
+
 a {
     color: #333;
     font-size: 14px;
@@ -85,7 +86,13 @@ input {
     border: none;
     padding: 12px 15px;
     margin: 12px 0; /* Aumenta el margen para separar más los campos */
-    width: 100%;
+    width: 100px;
+    
+}
+.cajas {
+    width:500px;
+
+  
 }
 
 /* Nuevo estilo para los inputs en la sección de inicio de sesión */
@@ -231,4 +238,47 @@ input {
     margin: 0 5px;
     height: 40px;
     width: 40px;
+}
+ /* Estilos para el contenedor del tooltip */
+ .tooltip-container {
+    position: relative;
+    display: inline-block;
+  
+
+}
+
+/* Estilos para el tooltip */
+.tooltip-container .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Ubicación arriba del input */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Flecha del tooltip */
+.tooltip-container .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Ubica la flecha en la parte inferior del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Mostrar el tooltip al hacer hover */
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
