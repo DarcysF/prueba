@@ -29,7 +29,7 @@ function validar_parametros() {
         alert("debes ingresar todos los campos");
 
     }
-    else if(contraseña<8    || contraseña>10){
+    else if(contraseña<=8    || contraseña>=10){
         alert("la cantidad de caracteres de estar entre 8 y 10 caracteres");
         console.log(contraseña)
         contraseña.value=contraseña;  
