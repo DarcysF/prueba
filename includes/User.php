@@ -54,7 +54,7 @@
                         <script>
                             setTimeout(function() {
                                 window.location.href = "/darcy/prueba/public/index.php";
-                            }, 4000);
+                            }, 7000);
                         </script>
                     ');
                     return;
