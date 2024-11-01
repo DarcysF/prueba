@@ -31,7 +31,7 @@
                         </div>
                         <script>
                             setTimeout(function() {
-                                window.location.href = "/darcy/prueba/public/index.php";
+                                window.location.href = "../public/index.php";
                             }, 4000);
                         </script>
                     ');
@@ -53,7 +53,7 @@
                         </div>
                         <script>
                             setTimeout(function() {
-                                window.location.href = "/darcy/prueba/public/index.php";
+                                window.location.href = "../public/index.php";
                             }, 7000);
                         </script>
                     ');
@@ -76,17 +76,17 @@
                 echo ('
                     <head>
                         <title>Bienvenido</title>
-                        <link rel="shortcut icon" href="./darcy/prueba/img/icono__bienvenida.png" type="image/x-icon">
+                        <link rel="shortcut icon" href="../img/icono__bienvenida.png" type="image/x-icon">
                     </head>
                     <div id="responseMessage" class="respuesta">
                         <p style="color: red;">Bienvenido a nuestra biblioteca virtual</p>
                         <div class="img">
-                            <img src="/darcy/prueba/img/exito.gif" alt="icono de éxito">
+                            <img src="../img/exito.gif" alt="icono de éxito">
                         </div>
                     </div>
                     <script>
                         setTimeout(function() {
-                            window.location.href = "/darcy/prueba/public/home.php";
+                            window.location.href = "../public/home.php";
                         }, 5000);
                     </script>
                 ');
