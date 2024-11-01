@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/sesion.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="../js/sesion.js" defer></script>
     <script src="../js/validaciones.js" defer></script> <!-- Vincula el archivo JS de validaciones -->
 
@@ -16,6 +17,25 @@
         width: 500px;
         margin: 0% 0% 2% 0%;
     }
+    #form{
+    height: 100%;
+    line-height: 1em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    border: 1px solid;
+
+}
+.bx{
+    font-size:30px;
+    transform:translateX(-40px);
+    align-items:center;
+    cursor:pointer;
+    margin: 1.5% 0% 0% 0% ;
+    position: absolute;
+
+
+}
 </style>
 </head>
 <body>
@@ -37,6 +57,7 @@
                 </div>
                 <div class="tooltip-container">
                     <input class="cajas" id="contraseña" type="password" name="password" placeholder="Contraseña" minlength="8" maxlength="10" required />
+                    <i class="bx bx-show-alt"></i>
                     <br>
                     <span class="tooltip-text">La clave debe ser de entre (8, 10) caracteres (incluir mínimo una mayúscula, un símbolo y un número)</span>
                 </div>
@@ -96,7 +117,21 @@
             </div>
         </div>
     </div>
-
+<script>
+     const password =    document.getElementById("contraseña");
+    const icon=  document.querySelector(".bx");
+    icon.addEventListener("click", evento=>{
+        if (password.type === "password") {
+            password.type="text"; 
+            icon.classList.remove('bx-show-alt');
+            icon.classList.add('bx-hide');
+        }else{
+            password.type="password";
+            icon.classList.add('bx-show-alt');
+            icon.classList.remove('bx-hide');
+        }
+    })
+</script>
 
   
 </body>

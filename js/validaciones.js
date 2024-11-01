@@ -1,4 +1,8 @@
 
+
+
+
+
 function validarFormulario(event) {
     event.preventDefault(); // Evita el envío del formulario
 
@@ -11,8 +15,15 @@ function validarFormulario(event) {
     const email = document.querySelector('input[name="mail"]').value;
     const telefono = document.querySelector('input[name="telephone"]').value;
     const password = document.querySelector('input[name="password"]').value;
+ 
+
+ 
+
 
     let errores = [];
+
+
+    
 
     // Validación del nombre
     if (nombre.length < 3) {
