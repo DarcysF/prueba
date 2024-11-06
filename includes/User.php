@@ -116,47 +116,47 @@
             
         }
 
-        // Inicio de sesión de usuario
-        public function login($email, $password) {
+        public function login($email, $password)
+        {
             try {
                 // Validación básica
                 if (empty($email) || empty($password)) {
                     return [
-                        'success' => false,
+                        'success' => false, // Aseguramos que siempre retornamos 'success'
                         'error' => 'El correo y la contraseña son obligatorios'
                     ];
                 }
-
                 // Buscar al usuario por su correo
                 $stmt = $this->db->getPDO()->prepare("SELECT * FROM users WHERE mail_user = :mail_user");
                 $stmt->execute([':mail_user' => $email]);
-
                 // Verificar si se encontró un usuario
                 if ($stmt->rowCount() > 0) {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+                    // Registrar la contraseña ingresada y la almacenada para depuración (temporal)
+                    error_log("Contraseña ingresada: " . $password);
+                    error_log("Contraseña almacenada: " . $user['password_user']);
                     // Comparar las contraseñas en texto plano
                     if ($password === $user['password_user']) {
                         return [
-                            'success' => true,
+                            'success' => true, // Retornamos true si el login es exitoso
                             'message' => 'Usuario logueado exitosamente'
                         ];
                     } else {
                         return [
-                            'success' => false,
+                            'success' => false, // Retornamos false si la contraseña es incorrecta
                             'error' => 'Contraseña incorrecta'
                         ];
                     }
                 } else {
                     return [
-                        'success' => false,
+                        'success' => false, // Retornamos false si no se encuentra el usuario
                         'error' => 'Usuario no encontrado o credenciales incorrectas'
                     ];
                 }
             } catch (PDOException $e) {
                 error_log('Error en el login de usuario: ' . $e->getMessage());
                 return [
-                    'success' => false,
+                    'success' => false, // Retornamos false si ocurre un error
                     'error' => 'Error al iniciar sesión: ' . $e->getMessage()
                 ];
             }

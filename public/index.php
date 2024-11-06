@@ -9,8 +9,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="../js/sesion.js" defer></script>
-    <script src="../js/validaciones.js" defer></script> <!-- Vincula el archivo JS de validaciones -->
+    
 
 <style>
     .cajas {
@@ -76,29 +75,38 @@
                 <button type="submit">Iniciar Sesión</button>
                 <a href="recovery.php">¿Olvidaste la contraseña?</a>
                 <!-- Alerta de error -->
-                <?php if (isset($_GET['messages']) && $_GET['messages'] == 'error') { ?>
-                    <div class="alert alert-danger mt-3" role="alert">
-                        La contraseña o el correo electrónico son incorrectos.
-                    </div>
-                <?php } ?>
+                <?php 
+                if (isset($_GET['messages']) && $_GET['messages'] == 'error') {
+                ?>
+                <div class="alert alert-danger mt-3" role="alert">
+                    La contraseña o el correo electrónico son incorrectos.
+                </div>
+                <?php
+                }
+                ?>
+
                 <!-- Alerta de otros mensajes -->
-                <?php if (isset($_GET['message'])) { ?>
-                    <div class="alert alert-primary" role="alert">
-                        <?php 
-                        switch ($_GET['message']) {
-                            case 'ok':
-                                echo 'Por favor, revisa tu correo';
-                                break;
-                            case 'success_password':
-                                echo 'Inicia sesión con tu nueva contraseña';
-                                break;
-                            default:
-                                echo 'Tu correo electrónico no está registrado';
-                                break;
-                        }
-                        ?>
-                    </div>
-                <?php } ?>
+                <?php 
+                if (isset($_GET['message'])) {
+                ?>
+                <div class="alert alert-primary" role="alert">
+                    <?php 
+                    switch ($_GET['message']) {
+                    case 'ok':
+                        echo 'Por favor, revisa tu correo';
+                        break;
+                    case 'success_password':
+                        echo 'Inicia sesión con tu nueva contraseña';
+                        break;
+                    default:
+                        echo 'Tu correo electronico no esta registrado';
+                        break;
+                    }
+                    ?>
+                </div>
+                <?php
+                }
+                ?>
             </form>
         </div>
 
@@ -132,7 +140,8 @@
         }
     })
 </script>
-
+<script src="../js/sesion.js" defer></script>
+<script src="../js/validaciones.js" defer></script> <!-- Vincula el archivo JS de validaciones -->
   
 </body>
 </html>
